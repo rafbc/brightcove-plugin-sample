@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Plugin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf8"/>
+	<style>
+	textarea,
+	.video-container {
+		max-width:720px;
+		width: 100%;
+		display: block;
+		position: relative;
+		margin: 0 auto;
+	}
+	.video-container:after {
+		padding-top: 56.25%;
+		display: block;
+		content: '';
+	}
+	.video-container .video-js {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	textarea {
+		margin-top: 20px;
+		height: 300px;
+	}
+
+	/* Error message styling */
+	.vjs-errors-headline {
+		font-size: 20px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="video-container">
+			<video id="player"
+			data-video-id="5796914044001"
+			data-account="5753598131001"
+			data-player="default"
+			data-embed="default"
+			data-application-id
+			class="video-js"
+			controls></video>
+			<script src="//players.brightcove.net/5753598131001/default_default/index.min.js"></script>
+
+
+	</div>
+
+	<script src="//players.brightcove.net/5303576322001/BkQJNYO7M_default/index.min.js"></script>
+	<script src="src/plugin-sample.js"></script>
+
+	<script>
+		var _player = videojs('player');
+		_player.samplePlugin({
+			debug: true,
+			breakingPointToTrack: [25, 50, 75, 100]
+		});
+	</script>
+</body>
+</html>
